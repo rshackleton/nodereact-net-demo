@@ -1,0 +1,7 @@
+﻿@using NodeReact.AspNetCore;
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+@await Html.ReactAsync("Components.TestComponent", new { name = "World" })

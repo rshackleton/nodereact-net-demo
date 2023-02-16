@@ -28,6 +28,11 @@ public class Program
                 config.ConfigureSystemTextJsonPropsSerializer((_) => { });
             });
 
+        services.AddOutputCache(options =>
+        {
+            options.AddBasePolicy(builder => builder.Cache());
+        });
+
         // Configure
 
         var app = builder.Build();
@@ -50,6 +55,8 @@ public class Program
 
         app.UseRouting();
         app.MapControllers();
+        
+        app.UseOutputCache();
 
         app.Run();
     }

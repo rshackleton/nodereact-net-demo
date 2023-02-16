@@ -1,3 +1,9 @@
-import { TestComponent } from "./TestComponent";
+import React from "react";
 
-export const components = { TestComponent };
+const TestComponent = React.lazy(() =>
+  import("./TestComponent/TestComponent").then((m) => ({
+    default: m.TestComponent,
+  }))
+);
+
+export default { TestComponent };

@@ -6,10 +6,10 @@
 
 <h1>React</h1>
 
+<p>Go to <a href="/">React</a> page.</p>
 <p>Go to <a href="/no-react">No React</a> page.</p>
-<p>Go to <a href="/server-only">Server Only</a> page.</p>
 
 @for (int i = 0; i < 10; i++)
 {
-    @await Html.ReactAsync("Components.TestComponent", new { count = 100 }, htmlTag: "react-component")
+    @await Html.ReactAsync("Components.TestComponent", new { count = 100 }, htmlTag: "react-component", serverOnly: true)
 }

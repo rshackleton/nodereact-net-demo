@@ -19,6 +19,18 @@ public class HomeController : Controller
         return View();
     }
 
+    [HttpGet("/no-react")]
+    public IActionResult NoReact()
+    {
+        return View();
+    }
+
+    [HttpGet("/server-only")]
+    public IActionResult ServerOnly()
+    {
+        return View();
+    }
+
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
